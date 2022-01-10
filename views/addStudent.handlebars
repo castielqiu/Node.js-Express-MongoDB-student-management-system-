@@ -1,0 +1,42 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Home</li>
+  </ol>
+</nav>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="student">Student</a></li>
+    <li class="breadcrumb-item active" aria-current="page">New Student</li>
+  </ol>
+</nav>
+
+
+<form class="row g-3" method="POST" action="/user/addStudent" enctype="multipart/form-data">
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="firstName" name="firstName">
+  <label for="floatingInput">First Name</label>
+</div>
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="lastName" name="lastName">
+  <label for="floatingInput">Last Name</label>
+</div>
+<div class="form-floating mb-3">
+  <input type="number" class="form-control" id="NumberOfCourse" name="numberOfCourse">
+  <label for="floatingInput">Number of Courses</label>
+</div>
+<div class="form-floating mb-3">
+  <input type="file" class="form-control" id="profilePic" name="profilePic" >
+  <label for="floatingInput" >student picture</label>
+</div>
+<div class="form-floating mb-3">
+<img src="uploads/{{this.profilePic}}" alt="student picture">
+</div>
+<div class="col-3 d-grid">
+     <button type="submit" class="btn btn-primary" >Submit</button>
+ </div>
+</form>
+{{#each errors}}
+<div>{{this}}</div>
+{{/each}}
